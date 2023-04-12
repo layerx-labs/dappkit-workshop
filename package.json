@@ -9,7 +9,7 @@
     "deploy:kovan": "npx hardhat run --network kovan scripts/deploy.ts",
     "deploy:ropsten": "npx hardhat run --network ropsten scripts/deploy.ts",
     "deploy:moonbase": "npx hardhat run --network moonbase scripts/deploy.ts",
-    "ganache:dev": "npx hardhat ganache -h 0.0.0.0 -p 8545 -a 50  -s 0x6d2119524d65ea0b15b214ef260d3acdf8ca0ec6ec68045b5785d970f5ad97bd3d0025d212e625a8a21920852cc165c10faa6d8387a0c2530d1ffc0d265d92935749"
+    "ganache:dev": "npx ganache -h 0.0.0.0 -p 8545 -a 50  -s 0x6d2119524d65ea0b15b214ef260d3acdf8ca0ec6ec68045b5785d970f5ad97bd3d0025d212e625a8a21920852cc165c10faa6d8387a0c2530d1ffc0d265d92935749"
   },
   "author": "Helder Vasconcelos",
   "license": "ISC",
@@ -38,6 +38,5 @@
   },
   "dependencies": {
     "dotenv": "^16.0.3"
-
   }
 }

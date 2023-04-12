@@ -34,22 +34,6 @@ const config: HardhatUserConfig = {
     ropsten: {
       url: `https://ropsten.infura.io/v3/${process.env.DEPLOY_INFURA_KEY}`
     },
-    seneca: {
-      url: 'https://eth-seneca.taikai.network:8080',
-      accounts: [...TESTING_ACCOUNTS],
-    },
-    afrodite: {
-      url: 'https://eth-afrodite.taikai.network:8080',
-      accounts: [...TESTING_ACCOUNTS],
-    },
-    irene: {
-      url: 'https://eth-irene.taikai.network:8080',
-      accounts: [...TESTING_ACCOUNTS],
-    },
-    iris: {
-      url: 'https://eth-iris.taikai.network:8080',
-      accounts: [...TESTING_ACCOUNTS],
-    }
   },
   paths: {
     artifacts: "./build"
