@@ -1,6 +1,5 @@
-import { ethers } from "hardhat";
 import { ERC20, Web3Connection } from "@taikai/dappkit"
-import Keys from "../data/accounts-testing"
+import Keys from "../data/accounts-testing";
 
 /**
  * Exercise 1: Solution
