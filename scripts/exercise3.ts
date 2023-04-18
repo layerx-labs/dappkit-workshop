@@ -1,18 +1,13 @@
 import { Model, Web3Connection } from "@taikai/dappkit"
 import Keys from "../data/accounts-testing";
 import fs from 'fs';
-import { utils } from 'ethers';
-
+import * as AttendeesArtifact from "../build/contracts/Attendees.sol/Attendees.json";
 
 /**
  * Exercise 3: Solution
  */
 async function main() { 
     const [owner] = Keys;
-    const ABIFilePath = "build/contracts/Attendees.sol/Attendees.json";
-    const abiJson = fs.readFileSync(ABIFilePath, 'utf8');
-    // Parse the JSON data into an object
-    const contractABI = JSON.parse(abiJson);
     // Web3 Connection Configuration Settings    
     const web3Con = new Web3Connection({
       debug: false,
@@ -20,14 +15,14 @@ async function main() {
       privateKey: owner.privKey,       
     });
     // 1. Deploy GM Dappkit Token 
-    const attendeesDeployer = new Model(web3Con, contractABI.abi);
+    const attendeesDeployer = new Model(web3Con, AttendeesArtifact.abi);
     attendeesDeployer.loadAbi();
     const txReceipt = await attendeesDeployer.deploy({
-        data: contractABI.bytecode,
+        data: AttendeesArtifact.bytecode,
     },  web3Con.Account);
     console.log("Dappkit Attendees Contract deployed to ", txReceipt.contractAddress);
 
-    const attendeesContract = new Model(web3Con, contractABI.abi, txReceipt.contractAddress); 
+    const attendeesContract = new Model(web3Con, AttendeesArtifact.abi, txReceipt.contractAddress); 
     // Register a new Ateendee
     await attendeesContract.sendTx(attendeesContract.contract.methods["register"]("Helder Vasconcelos", "helder@layerx.xyz"));
     // Get the number of ateendees
@@ -37,7 +32,6 @@ async function main() {
     const res = await attendeesContract.callTx(attendeesContract.contract.methods["getAttendeeDetails"](0));
     console.log("The number of ateendees ate", len);
     console.log("Ateendee 0 is ",res[0]);
-
     
 }
 
