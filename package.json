@@ -6,9 +6,9 @@
   "scripts": {
     "build": "npx hardhat compile",
     "compile": "npx hardhat compile",
-    "test:exercise1": "npx hardhat run scripts/exercise1.ts",    
-    "test:exercise2": "npx hardhat run scripts/exercise2.ts",    
-    "test:exercise3": "npx hardhat run scripts/exercise3.ts",        
+    "test:exercise1": "npx hardhat run scripts/exercise1.ts",
+    "test:exercise2": "npx hardhat run scripts/exercise2.ts",
+    "test:exercise3": "npx hardhat run scripts/exercise3.ts",
     "deploy:local": "npx hardhat run --network local scripts/deploy.ts",
     "deploy:kovan": "npx hardhat run --network kovan scripts/deploy.ts",
     "deploy:ropsten": "npx hardhat run --network ropsten scripts/deploy.ts",
@@ -41,7 +41,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "@taikai/dappkit": "^2.2.0",
+    "@taikai/dappkit": "^2.3.0",
     "dotenv": "^16.0.3"
   }
 }
