@@ -14,7 +14,7 @@ async function main() {
     
     // Web3 Connection Configuration Settings    
     const web3Con = new Web3Connection({
-      debug: true,
+      debug: false,
       web3Host: "http://localhost:8545",
       privateKey: owner.privKey,       
     });
@@ -41,8 +41,9 @@ async function main() {
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-main().catch((error) => {
-    console.error(error);
-    process.exitCode = 1;
-  });
-  
+main().then(()=>{
+  process.exit(0);
+}).catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
