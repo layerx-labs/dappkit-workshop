@@ -17,7 +17,7 @@ const config: HardhatUserConfig = {
   networks: {
     local: {
       url: 'http://localhost:8545',
-      accounts: [...TESTING_ACCOUNTS],
+      accounts: [...TESTING_ACCOUNTS.map(account=> account.privKey)],
     },
     moonbase: {
       url: 'https://rpc.api.moonbase.moonbeam.network',

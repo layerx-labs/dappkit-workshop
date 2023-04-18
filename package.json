@@ -37,6 +37,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@taikai/dappkit": "^2.2.0",
     "dotenv": "^16.0.3"
   }
 }

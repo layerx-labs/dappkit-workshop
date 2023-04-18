@@ -5,13 +5,15 @@ dappKit is a powerful Typescript/Javascript SDK that allows you to develop beaut
 
 ## Setup 
 
+```
 npm install
+```
 
 ### Launch your Local Ganache
+
 ```
 npm run ganache:dev
 ```
-
 
 ### Exercises:
 
@@ -34,7 +36,7 @@ npm run ganache:dev
 
 ### Important Links
 
-* [Website](https://dappkit.dev/)
+* [Dappkit Website](https://dappkit.dev/)
 * [Documentation](https://docs.dappkit.dev/start-building)
 * [API Reference](https://sdk.dappkit.dev/)
 * [Source Code](https://github.com/taikai/dappkit)
