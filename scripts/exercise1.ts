@@ -8,7 +8,6 @@ import {AccountsTesting} from "../data/accounts-testing";
 async function main() { 
 
   const connection = new Web3Connection({web3Host: 'http://localhost:8545', privateKey: AccountsTesting[0].privKey})
-  await connection.start();
 
   const connectedAddress = await connection.getAddress();
   console.log(`Connected Address`, connectedAddress);
