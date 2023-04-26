@@ -1,4 +1,5 @@
-import { ERC20, Web3Connection } from "@taikai/dappkit"
+import {ERC20, toSmartContractDecimals, Web3Connection} from "@taikai/dappkit"
+import {AccountsTesting} from "../data/accounts-testing";
 
 /**
  * Exercise 1
@@ -6,15 +7,19 @@ import { ERC20, Web3Connection } from "@taikai/dappkit"
 
 async function main() { 
 
-    // 0. Setup Web3 Connection  
-    
-    // 1. Deploy GM Dappkit Token 
-    
-    // 2. Load the ERC-20 Modal with the deployed contract
-    
-    // 3. Transfer X to another account
-    
-    // 4. Read the balance 
+  const connection = new Web3Connection({web3Host: 'http://localhost:8545', privateKey: AccountsTesting[0].privKey})
+
+  const connectedAddress = await connection.getAddress();
+  console.log(`Connected Address`, connectedAddress);
+
+  const gmToken = new ERC20(connection);
+
+  await gmToken.deployJsonAbi(`name`, `symbol`, toSmartContractDecimals(1000), connectedAddress);
+  console.log(`Contract Address`, gmToken.contractAddress);
+
+  const AliceAddress = AccountsTesting[1].address;
+  await gmToken.transfer(AliceAddress, 1);
+  console.log(`Account Balance`, AliceAddress, await gmToken.balanceOf(AliceAddress));
 }
 
 

@@ -1,7 +1,7 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import 'dotenv/config';
-import TESTING_ACCOUNTS from "./data/accounts-testing"
+import {AccountsTesting} from "./data/accounts-testing"
 
 const config: HardhatUserConfig = {
   solidity:  {
@@ -17,7 +17,7 @@ const config: HardhatUserConfig = {
   networks: {
     local: {
       url: 'http://localhost:8545',
-      accounts: [...TESTING_ACCOUNTS.map(account=> account.privKey)],
+      accounts: [...AccountsTesting.map(account=> account.privKey)],
     },
     moonbase: {
       url: 'https://rpc.api.moonbase.moonbeam.network',

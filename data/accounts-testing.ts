@@ -1,4 +1,4 @@
-export default [
+export const AccountsTesting = [
     { privKey: "0x889bf162087bdc554e4ff2d5f06c9dcaf2063d1674cedd97099f9b7053af517e", address: "0xf15CC0ccBdDA041e2508B829541917823222F364"},
     { privKey: "0x95e916f55dd77a2cc1282805f53ce1cb8808d707936d853c785299c836d178bc", address: "0xF39FC4F1d439D03E82f698a86f2D79C6aa9dD380"},
     { privKey: "0xc93cd06f87632696a75a304e4230e1cfaed487051efa8cc0280b2d357421beb2", address: "0x7A7B9e0fA995A701b84368c7239c6eF84161eB0C"},
